@@ -16,16 +16,16 @@ public class Solido extends Ingrediente {
         return consecutivo;
     }
 
-    public int getNombre() {
+    public String getNombre() {
         return nombre;
     }
-    public int nombre;
+    public String nombre;
 
     public void setConsecutivo(int consecutivo) {
         this.consecutivo = consecutivo;
     }
 
-    public void setNombre(int nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
     
