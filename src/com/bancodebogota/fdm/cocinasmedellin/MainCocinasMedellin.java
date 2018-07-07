@@ -29,6 +29,12 @@ public class MainCocinasMedellin {
 
         System.out.println(cocina.toString());
         
+        //Creo el cliente:
+        Cliente cliente = new Cliente();
+        cliente = createCliente("999999999", "Mario Brosh");
+        
+        System.out.println(cliente.toString());
+        
         EstructuraIngrediente contestura = new EstructuraIngrediente();
         contestura.consecutivo=1;
         contestura.nombreEstructura="Solido";
@@ -47,7 +53,9 @@ public class MainCocinasMedellin {
         newIngrediente.contable=true;
         
         listaInventario=addInventario(newIngrediente, listaInventario);
-
+        
+        System.out.println(newIngrediente.toString());
+        
         newIngrediente.nombre = "Arroz";
         newIngrediente.cantidad = 1;
         newIngrediente.contestura = contestura2;
@@ -55,6 +63,8 @@ public class MainCocinasMedellin {
         
         listaInventario=addInventario(newIngrediente, listaInventario);
 
+        System.out.println(newIngrediente.toString());
+        
         newIngrediente.nombre = "Coco";
         newIngrediente.cantidad = 1;
         newIngrediente.contestura = contestura2;
@@ -62,6 +72,7 @@ public class MainCocinasMedellin {
         
         listaInventario=addInventario(newIngrediente, listaInventario);
 
+        System.out.println(newIngrediente.toString());
 
         //Creo el inventario de las recetas
         Ingrediente[] listaInventarioReceta = new Ingrediente[1];
@@ -74,13 +85,17 @@ public class MainCocinasMedellin {
         
         listaInventarioReceta=addInventario(newIngredienteReceta, listaInventarioReceta);
 
+        System.out.println(newIngredienteReceta.toString());
+        
         newIngredienteReceta.nombre = "Arroz";
         newIngredienteReceta.cantidad = 1;
         newIngredienteReceta.contestura = contestura2;
         newIngredienteReceta.contable=false;
         
         listaInventarioReceta=addInventario(newIngredienteReceta, listaInventarioReceta);
-
+        
+        System.out.println(newIngredienteReceta.toString());
+        
         newIngredienteReceta.nombre = "Coco";
         newIngredienteReceta.cantidad = 1;
         newIngredienteReceta.contestura = contestura2;
@@ -88,6 +103,7 @@ public class MainCocinasMedellin {
         
         listaInventarioReceta=addInventario(newIngredienteReceta, listaInventarioReceta);
 
+        System.out.println(newIngredienteReceta.toString());
         
         /*Se crean las recetas*/
         Receta receta = new Receta();
@@ -152,6 +168,18 @@ public class MainCocinasMedellin {
         }
         
         return (modelJefeCocina);
+     }
+    
+    
+    public static Cliente createCliente(String Cedula, String nombre, Cliente modelCliente){
+        
+        if (modelCliente.getNombre() != nombre){
+            modelCliente.setConsecutivo(modelCliente.getConsecutivo() + 1);
+            modelCliente.setCedula(Cedula);
+            modelCliente.setNombre(nombre);
+        }
+        
+        return (modelCliente);
      }
 
      public static Cocina createCocina(String nombre, String especialidad, String direccion, String telefono, Chef jefeCocina, Cocina modelCocina){
