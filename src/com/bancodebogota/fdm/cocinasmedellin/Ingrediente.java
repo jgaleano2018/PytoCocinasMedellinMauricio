@@ -65,7 +65,7 @@ public class Ingrediente {
          
     @Override
     public String toString(){
-        return "Nombre[".concat(nombre).concat("], Cantidad[").concat(String.valueOf(cantidad)).concat("], Contestura[").concat(contestura.getNombreEstructura()).concat("], Contable[".concat(contable ? Si : No)).concat("], Total Ingrediente[").concat(String.valueOf(tamaño));
+        return "Nombre[".concat(nombre).concat("], Cantidad[").concat(String.valueOf(cantidad)).concat("], Contestura[").concat(contestura.getNombreEstructura()).concat("], Contable[".concat(contable ? "Si" : "No")).concat("], Total Ingrediente[").concat(String.valueOf(tamaño));
     }
     
     /*void updateInventario(int consecutivoIngrediente, int cantidad, Ingrediente[] listaInventario){ 
